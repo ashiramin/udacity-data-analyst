@@ -44,7 +44,7 @@ def main():
     for key in result:
         result[key] = list(result[key])
 
-    json.dump(result,open('data/tags.json','w'))
+    json.dump(result,open('data/tags.json','w'),indent= 2, sort_keys= True)
     pprint(result)
 
 
