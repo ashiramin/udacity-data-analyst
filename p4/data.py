@@ -15,7 +15,7 @@ street_regex = re.compile(r'^street')
 
 CREATED = [ "version", "changeset", "timestamp", "user", "uid"]
 ALIAS_TAGS = ['name_1', 'old_name', 'alt_name', 'name_2', 'place_name', 'loc_name',
-    'official_name', 'name_3', 'short_name', 'bridge_name']
+    'official_name', 'name_3', 'short_name']
 
 ZIPCODE_TAGS = [ 'addr:postcode','postal_code' ]
 CONTACT_TAGS =  ['contact:phone' , 'phone']
@@ -68,7 +68,11 @@ def shape_element(element):
             if problemchars.search(key):
                 continue
 
+            # Ignored all tags gnis and  except one
             if key.startswith("gnis") or key.startswith("tiger"):
+                if key == 'tiger:county':
+                    key = key.replace('tiger','')
+                    node[key] = val
                 continue
 
             if key in alias_tags:
@@ -91,7 +95,7 @@ def shape_element(element):
                 continue
 
 
-     
+
             elif address_regex.search(key):
                 key = key.replace('addr:', '')
                 address[key] = val
