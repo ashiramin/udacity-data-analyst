@@ -22,15 +22,15 @@ Please follow the following prereqs to setup everything
 
 
 ##Files
-- `data/`: data files and output from scripts (`austin.osm` and `austin.osm.json` excluded)
+- `data/`: All datasets fils
 - `audit.py`: audits streets and zipcodes, also provides cleaning methods
 - `data.py`: Cleans the osn data, shapes it for import into MongoDB
-- `mapparser.py`: parses the OSM file and provides insight on tag data
+- `count_tag.py`: counts occurence of each tag
 - `db.conf`: MongoDB config file
 - `requirements.txt`: contains list of Python packages used for the project
 - `README.md`: this file
 - `run.sh`: Bash script to boot MongoDB
-- `submission.pdf`: PDF format of this document
+- `final.pdf`: PDF format Report.ipynb
 - `sample.py`: Samples a part of the OSM Data
 - `scrape.py`: Scrapes street suffixes from the web for cleaning data later
-- `tags.py`: script for conducting exploratory data analysis on tag data
+- `tags.py`: script for exploring data
