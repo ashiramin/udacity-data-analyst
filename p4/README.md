@@ -13,6 +13,7 @@ Make sure you have the following installed
 
 Please follow the following prereqs to setup everything
 
+- `pip install -r requirements.txt`
 - `chmod u+x *.sh`
 - `./download.sh`
 - `python sample.py`
